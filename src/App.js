@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+import CardViewer from './CardViewer';
+import AddCard from './AddCard';
+import EditCard from './EditCard';
+import LearnCards from './LearnCards';
+import TestCards from './TestCards';
+import NavB from './NavB';
+import Home from './Home';
+import { CookiesProvider } from 'react-cookie';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+class App extends Component {
+    render(){
+    return (
+        <div>
+
+        <CookiesProvider>
+        <NavB></NavB>
+        <Router>
+
+          <Switch>
+            <Route exact path='/' exact={true} component={Home}/>
+            <Route exact path='/CardViewer' exact={true} component={CardViewer}/>
+            <Route path='/AddCard' exact={true} component={AddCard}/>
+            <Route path='/EditCard/:id' exact={true} component={EditCard}/>
+            <Route exact path='/LearnCards' exact={true} component={LearnCards}/>
+            <Route exact path='/TestCards' exact={true} component={TestCards}/>
+
+
+
+          </Switch>
+
+        </Router>
+        </CookiesProvider>
+
+        </div>
+    );
+  }
+  }
+
 
 export default App;

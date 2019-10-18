@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@okta/okta-react": "^1.2.3",
+    "@okta/okta-sdk-nodejs": "^2.0.1",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "okta": "^1.0.0",
+    "popper.js": "^1.15.0",
     "react": "^16.9.0",
+    "react-cookie": "^4.0.1",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-flippy": "^0.1.5",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "reactstrap": "^8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -13,6 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
   },
