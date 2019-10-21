@@ -142,6 +142,10 @@ class CardViewer extends Component {
 
         const distinctCats = [...new Set(cats)];
 
+        const dropDMenu = distinctCats.map((e, key) => {
+                              return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
+                               })
+
 
 
     if (isLoading) {
@@ -153,24 +157,22 @@ class CardViewer extends Component {
          <div className = "App-header"  >
 
 
-                <h1 className="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
+                <h1 className="display-2 form">Test your Knowledge</h1>
 
 
                                            <div className="dropdown">
-                                            <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button className="btn btn-secondary dropdown-toggle buttons"   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Categories
                                               </button>
                                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    {distinctCats.map((e, key) => {
-                                                                          return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
-                                                                           })}
+                                                    {dropDMenu}
 
                                                 </div>
 
                                             </div>
 
 
-                 <h1 className="display-3" style={{color:'#41669d'}}>Score = {score} / {this.state.filteredCards.length}</h1>
+                 <h1 className="display-3 form" >Score = {score} / {this.state.filteredCards.length}</h1>
 
                  </div>
                  );
@@ -182,17 +184,15 @@ class CardViewer extends Component {
       <div className = "App-header"  >
 
 
-            <h1 className="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
+            <h1 className="display-2 form">Test your Knowledge</h1>
 
 
                                        <div className="dropdown">
-                                        <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button className="btn btn-secondary dropdown-toggle buttons"   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Categories
                                           </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                {distinctCats.map((e, key) => {
-                                                                      return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
-                                                                       })}
+                                                {dropDMenu}
 
                                             </div>
 

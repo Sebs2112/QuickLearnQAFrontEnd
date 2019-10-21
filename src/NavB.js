@@ -54,13 +54,13 @@ class NavB extends Component {
                   <a className="nav-link" href="/CardViewer">View</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="AddCard">Add</a>
+                  <a className="nav-link" href="/AddCard">Add</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="LearnCards">Learn</a>
+                  <a className="nav-link" href="/LearnCards">Learn</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="TestCards">Test</a>
+                  <a className="nav-link" href="/TestCards">Test</a>
                 </li>
               </ul>
               <form className="form-inline ml-auto" action="/action_page.php">

@@ -92,32 +92,32 @@ class EditCard extends Component {
 
 
       <div className="App-header">
-      <h1 className="display-2" style={{color:'#41669d'}}>Edit Card</h1>
+      <h1 className="display-2 form">Edit Card</h1>
 
-      <Form style = {{color: '#41669d'}} onSubmit={this.handleSubmit}>
+      <Form className="form" onSubmit={this.handleSubmit}>
                 <FormGroup>
-                  <div style={{textAlign: 'center'}}>Front Text</div>
+                  <div className = "formGrp">Front Text</div>
                   <Input type="text" name="frontText" id="frontText" value={item.frontText}
                          onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
-                  <div style={{textAlign: 'center',}}>Back Text</div>
+                  <div className = "formGrp">Back Text</div>
                   <Input type="text" name="backText" id="backtext" value={item.backText}
                          onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
-                  <div style={{textAlign: 'center',}}>Category</div>
+                  <div className = "formGrp">Category</div>
                   <Input type="text" name="category" id="category" value={item.category}
                          onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
-                  <div style={{textAlign: 'center',}}> Title </div>
+                  <div className = "formGrp"> Title </div>
                   <Input type="text" name="title" id="title" value={item.title}
                          onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
-                <div style={{textAlign: 'center',}}>
-                <Button style ={{color:'white', backgroundColor:'#41669d', float: "center"}} type="submit" >Update</Button>
+                <div className = "formGrp">
+                <Button className="buttons" type="submit" >Update</Button>
                    </div>
                 </FormGroup>
         </Form>

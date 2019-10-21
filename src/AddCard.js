@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import { instanceOf } from 'prop-types';
@@ -82,8 +83,8 @@ class AddCard extends Component {
 
 
       <div className="App-header">
-      <h1 className="display-2" style={{color:'#41669d'}}>Add Card</h1>
-      <Form style = {{color: '#41669d'}} onSubmit={this.handleSubmit}>
+      <h1 className="display-2 form">Add Card</h1>
+      <Form className="form" onSubmit={this.handleSubmit}>
                 <FormGroup>
                   <Label for="frontText">Front Text</Label>
                   <Input type="text" name="frontText" id="frontText" value={item.frontText}
@@ -105,7 +106,7 @@ class AddCard extends Component {
                          onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
-                <Button style ={{color:'white', backgroundColor:'#41669d'}} type="submit">Add</Button>
+                <Button className = "buttons" type="submit">Add</Button>
 
                 </FormGroup>
         </Form>

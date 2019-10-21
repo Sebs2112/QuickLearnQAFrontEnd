@@ -27,8 +27,25 @@
 
 .buttons{
     color:white;
-    backgroundColor: #41669d;
+    background-color: #41669d;
 
+}
+
+.buttons:hover {
+  background-color: #175852; /* Green */
+  color: white;
+}
+
+.buttons:hover .dropbtn {
+  background-color: #175852;
+}
+
+.form{
+  color:#41669d;
+}
+
+.formGrp{
+  text-align: center;
 }
 
 /**

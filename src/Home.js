@@ -78,39 +78,28 @@ class Home extends Component {
                     <Card image = {AddImage} title = "Add Cards" text = "Create new cards to add into your collections" r = "AddCard"/>
                 </div>
             </div>
-                <div className="row mt-3 mb-3">
-                                   <div className="col-sm">
-                                   <Card image = {LogOutImage} title = "Logout" text  = "Log out of your account" r = "/" onClick = {this.logout}/>
-
-                                   </div>
-                                   <div className="col-sm">
-                                   <Card image = {TestImage} title = "Test" text  = "Test yourself on how well you know your collections " r = "/TestCards" />
-
-                                   </div>
-                                   <div className="col-sm">
-                                   <Card image = {ImportImage} title = "Import" text  = "Import new card collections from a csv file " r = "/" />
-
-                                   </div>
-
-                                 </div>
-                   </div>
-
+            <div className="row mt-3 mb-3">
+                <div className="col-sm">
+                    <Card image = {LogOutImage} title = "Logout" text  = "Log out of your account" r = "/" onClick = {this.logout}/>
+                </div>
+                <div className="col-sm">
+                    <Card image = {TestImage} title = "Test" text  = "Test yourself on how well you know your collections " r = "/TestCards" />
+                </div>
+                <div className="col-sm">
+                    <Card image = {ImportImage} title = "Import" text  = "Import new card collections from a csv file " r = "/" />
+                </div>
+            </div>
+        </div>
         <br/>
 
       </div> :
-      <Button color="primary" onClick={this.login}>Login/Register</Button>;
+      <Button className = "buttons" color="primary" onClick={this.login}>Login/Register</Button>;
 
     return (
       <div className = "App-header">
         <h1 className="display-2 header" >Card Flasher</h1>
-
-          {message}
-          {button}
-
-
-
-
-
+        {message}
+        {button}
       </div>
     );
   }
