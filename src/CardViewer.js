@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Table, Card, CardText, CardBody, CardTitle} from 'reactstrap';
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import { Button, ButtonGroup} from 'reactstrap';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 
@@ -90,20 +89,20 @@ class CardViewer extends Component {
         });
 
     return (
-      <div class = "App-header" >
+      <div className = "App-header" >
 
 
 
           <div>
 
-            <h1 class="display-2" style={{color:'#41669d'}}>Current Cards</h1>
-                <div class="dropdown ">
-                <button class="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <h1 className="display-2" style={{color:'#41669d'}}>Current Cards</h1>
+                <div className="dropdown ">
+                <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categories
                   </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {distinctCats.map((e, key) => {
-                                              return <button class="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
+                                              return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
                                                })}
 
                     </div>
@@ -111,7 +110,7 @@ class CardViewer extends Component {
                 </div>
 
 
-             <table class="table table-borderless" >
+             <table className="table table-borderless" >
                 <thead>
                     <tr>
                     </tr>

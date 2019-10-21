@@ -7,6 +7,8 @@ import AddImage from './images/AddImage.jpg';
 import LogOutImage from './images/LogOutImage.jpg';
 import TestImage from './images/TestImage.jpg';
 import ImportImage from './images/ImportImage.jpg';
+import Card from './Card';
+
 
 import { Link } from 'react-router-dom';
 import { Button, Container } from 'reactstrap';
@@ -50,6 +52,7 @@ class Home extends Component {
   }
 
   logout() {
+    console.log("Called")
     fetch('/api/logout', {method: 'POST', credentials: 'include',
       headers: {'X-XSRF-TOKEN': this.state.csrfToken}}).then(res => res.json())
       .then(response => {
@@ -60,78 +63,39 @@ class Home extends Component {
 
   render() {
     const message = this.state.user ?
-      <h2 class = "header" >Welcome, {this.state.user.name}!  Please select what you would like to do!</h2> :
-      <p class = "header">Please login/Register to begin card flashing fun!</p>;
+      <h2 className = "header" >Welcome, {this.state.user.name}!  Please select what you would like to do!</h2> :
+      <p className = "header">Please login/Register to begin card flashing fun!</p>;
 
     const button = this.state.isAuthenticated ?
       <div>
-         <div class="container">
-                     <div class="row mt-3 mb-3">
-                       <div class="col-sm">
-                                   <div class="card text-center" style={{ height: "21rem"}}>
-                                   <img src={ListImage} class="card-img-top" alt=" "></img>
-                                    <div class="card-body">
-                                    <a href="/CardViewer" class="card-link">List Cards</a>
-                                    <h6 class="card-subtitle mb-2 text-muted">View the cards that you have in your card library</h6>
-
-
-                                     </div>
-                                   </div>
+         <div className="container">
+                     <div className="row mt-3 mb-3">
+                       <div className="col-sm">
+                          <Card image = {ListImage} title = "List Cards" text = "View the cards that you have in your card library" r = "/CardViewer"/>
                        </div>
-                       <div class="col-sm">
-                                   <div class="card text-center" style={{ height: "21rem"}}>
-                                   <img src={LearnImage} class="card-img-top" alt=" "></img>
-                                    <div class="card-body">
-                                    <a href="/LearnCards" class="card-link">Learn Cards</a>
-                                    <h6 class="card-subtitle mb-2 text-muted">Memorise the cards that you have in your collections</h6>
+                       <div className="col-sm">
+                          <Card image = {LearnImage} title = "Learn Cards" text = "Memorise the cards that you have in your collections" r = "LearnCards"/>
 
-                                     </div>
-                                   </div>
                        </div>
-                       <div class="col-sm">
-                                   <div class="card text-center" style={{ height: "21rem"}}>
+                       <div className="col-sm">
+                          <Card image = {AddImage} title = "Add Cards" text = "Create new cards to add into your collections" r = "AddCard"/>
 
-                                   <img src={AddImage} class="card-img-top" alt=" "></img>
-                                    <div class="card-body">
-                                    <a href="AddCard" class="card-link">Add New Cards</a>
-                                    <h6 class="card-subtitle mb-2 text-muted">Create new cards to add into your collections</h6>
-
-                                     </div>
-                                   </div>
                        </div>
                      </div>
-                     <div class="row mt-3 mb-3">
-                                   <div class="col-sm">
-                                               <div class="card text-center" style={{ height: "21rem"}}>
-                                               <img src={LogOutImage} class="card-img-top" alt=" "></img>
-                                                <div class="card-body">
-                                                 <a href="/" class="card-link" onClick={this.logout}>Logout</a>
-                                                 <br/>
-                                                 <h6 class="card-subtitle mb-2 text-muted">Log out of your account
-                                                 <br/></h6>
+                     <div className="row mt-3 mb-3">
+                                   <div className="col-sm">
+                                   <Card image = {AddImage} title = "Logout" text  = "Log out of your account" r = "/" onClick = {this.logout}/>
 
-                                                 </div>
-                                               </div>
                                    </div>
-                                   <div class="col-sm">
-                                               <div class="card text-center" style={{ height: "21rem"}}>
-                                               <img src={TestImage} class="card-img-top" alt=" "></img>
-                                                <div class="card-body">
-                                                 <a href="/TestCards" class="card-link">Test</a>
-                                                 <h6 class="card-subtitle mb-2 text-muted">Test yourself on how well you know your collections</h6>
+                                   <div className="col-sm">
+                                   <Card image = {TestImage} title = "Test" text  = "Test yourself on how well you know your collections " r = "/TestCards" />
 
-                                                 </div>
-                                               </div>
                                    </div>
-                                   <div class="col-sm">
-                                               <div class="card text-center" style={{ height: "21rem"}}>
-                                               <img src={ImportImage} class="card-img-top" alt=" "></img>
-                                                <div class="card-body">
-                                                 <a href="/" class="card-link">Import Cards</a>
-                                                 <h6 class="card-subtitle mb-2 text-muted">Import new card collections from a csv file</h6>
-                                                 </div>
-                                               </div>
+                                   <div className="col-sm">
+                                   <Card image = {ImportImage} title = "Import" text  = "Import new card collections from a csv file " r = "/" />
+
                                    </div>
+
                                  </div>
                    </div>
 
@@ -141,8 +105,8 @@ class Home extends Component {
       <Button color="primary" onClick={this.login}>Login/Register</Button>;
 
     return (
-      <div class = "App-header">
-        <h1 class="display-2 header" >Card Flasher</h1>
+      <div className = "App-header">
+        <h1 className="display-2 header" >Card Flasher</h1>
 
           {message}
           {button}

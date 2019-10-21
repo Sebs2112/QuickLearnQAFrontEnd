@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import CardViewer from './CardViewer';
-import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
-import { Link, withRouter } from 'react-router-dom';
+import { Button, Form, FormGroup, Input} from 'reactstrap';
+import {withRouter } from 'react-router-dom';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 
@@ -93,7 +92,7 @@ class EditCard extends Component {
 
 
       <div className="App-header">
-      <h1 class="display-2" style={{color:'#41669d'}}>Edit Card</h1>
+      <h1 className="display-2" style={{color:'#41669d'}}>Edit Card</h1>
 
       <Form style = {{color: '#41669d'}} onSubmit={this.handleSubmit}>
                 <FormGroup>

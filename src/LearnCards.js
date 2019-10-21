@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Table, Card, CardText, CardBody, CardTitle, Container, Row, Col} from 'reactstrap';
+import { Button, CardBody, CardTitle, Container, Row, Col} from 'reactstrap';
 
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import { instanceOf } from 'prop-types';
@@ -118,20 +118,20 @@ class CardViewer extends Component {
 
     return (
 
-      <div class = "App-header"  >
+      <div className = "App-header"  >
 
-            <h1 class="display-2" style={{color:'#41669d'}}>Learn Cards</h1>
+            <h1 className="display-2" style={{color:'#41669d'}}>Learn Cards</h1>
 
-            <div class="container"  >
-            <div class="row justify-content-md-center mt-5">
+            <div className="container"  >
+            <div className="row justify-content-md-center mt-5">
 
-                                        <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div className="dropdown">
+                                        <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Categories
                                           </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 {distinctCats.map((e, key) => {
-                                                                      return <button class="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
+                                                                      return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
                                                                        })}
 
                                             </div>
@@ -139,11 +139,11 @@ class CardViewer extends Component {
                                         </div>
                                         </div>
 
-                <div class="row justify-content-md-center mt-5">
-                    <div class="col col-lg-2" style={{  display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                <div className="row justify-content-md-center mt-5">
+                    <div className="col col-lg-2" style={{  display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                         <Button size="lg" style={{float: "right", color:'white', backgroundColor:'#41669d'}} onClick={ this.onPrevClick} >Prev</Button>
                     </div>
-                    <div class="col-md-auto">
+                    <div className="col-md-auto">
                         <Flippy
                            flipOnHover={false} // default false
                            flipOnClick={true} // default false
@@ -162,12 +162,12 @@ class CardViewer extends Component {
                              </BackSide>
                          </Flippy>
                     </div>
-                    <div class="col col-lg-2 float-right" style={{  display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                    <div className="col col-lg-2 float-right" style={{  display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                         <Button  size="lg" style={{ color:'white', backgroundColor:'#41669d'}} onClick={ this.onNextClick } >Next</Button>
                     </div>
                 </div>
 
-                <div class="row justify-content-md-center mt-5">
+                <div className="row justify-content-md-center mt-5">
                     <Button  size="lg" style={{ color:'white', backgroundColor:'#41669d'}} onClick={ this.onRandomizeClick } >Randomize</Button>
                 </div>
             </div>

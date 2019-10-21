@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Table, Card, CardText, CardBody, CardTitle, Container, Row, Col} from 'reactstrap';
+import { Button, Row, Col} from 'reactstrap';
 
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import { instanceOf } from 'prop-types';
@@ -118,7 +118,7 @@ class CardViewer extends Component {
 
                           this.setState({score:this.state.score+1})};
                                           }
-                      }
+                    }
 
 
 
@@ -158,19 +158,19 @@ class CardViewer extends Component {
 
     if(display === 'finish'){
     return(
-         <div class = "App-header"  >
+         <div className = "App-header"  >
 
 
-                <h1 class="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
+                <h1 className="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
 
 
-                                           <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           <div className="dropdown">
+                                            <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Categories
                                               </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                     {distinctCats.map((e, key) => {
-                                                                          return <button class="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
+                                                                          return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
                                                                            })}
 
                                                 </div>
@@ -178,7 +178,7 @@ class CardViewer extends Component {
                                             </div>
 
 
-                 <h1 class="display-3" style={{color:'#41669d'}}>Score = {score} / {this.state.filteredCards.length}</h1>
+                 <h1 className="display-3" style={{color:'#41669d'}}>Score = {score} / {this.state.filteredCards.length}</h1>
 
                  </div>
                  );
@@ -187,19 +187,19 @@ class CardViewer extends Component {
     if (display === 'start'){
     return(
 
-      <div class = "App-header"  >
+      <div className = "App-header"  >
 
 
-            <h1 class="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
+            <h1 className="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
 
 
-                                       <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <div className="dropdown">
+                                        <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Categories
                                           </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 {distinctCats.map((e, key) => {
-                                                                      return <button class="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
+                                                                      return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
                                                                        })}
 
                                             </div>
@@ -213,19 +213,19 @@ class CardViewer extends Component {
 
     return (
 
-      <div class = "App-header"  >
+      <div className = "App-header"  >
 
 
-            <h1 class="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
+            <h1 className="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
 
 
-                                       <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <div className="dropdown">
+                                        <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d'}}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Categories
                                           </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 {distinctCats.map((e, key) => {
-                                                                      return <button class="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
+                                                                      return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
                                                                        })}
 
                                             </div>
@@ -234,42 +234,42 @@ class CardViewer extends Component {
 
 
 
-            <div class="container "  >
-                <div class = "row mb-3 mt-3">
-                    <div class="col-sm">
+            <div className="container "  >
+                <div className = "row mb-3 mt-3">
+                    <div className="col-sm">
                     </div>
-                    <div class="col-md justify-content-center text-center" style={{color:'#41669d'}}>
+                    <div className="col-md justify-content-center text-center" style={{color:'#41669d'}}>
                         {this.state.filteredCards[this.state.currentCard].frontText}
                     </div>
-                    <div class="col-sm">
+                    <div className="col-sm">
                     </div>
 
 
                 </div>
-                <div class = "row mb-3 justify-content-center" >
-                     <div class="btn-group btn-group-toggle "   data-toggle="buttons">
-                     <label class="btn btn-danger active"style={{color:'white', backgroundColor:'#41669d', borderColor:'#41669d'}} >
+                <div className = "row mb-3 justify-content-center" >
+                     <div className="btn-group btn-group-toggle "   data-toggle="buttons">
+                     <label className="btn btn-danger active"style={{color:'white', backgroundColor:'#41669d', borderColor:'#41669d'}} >
                      <input type="radio" name="options" id="option1" value = {this.state.answers[0]} autocomplete="off" /> {this.state.answers[0]}
                      </label>
                      </div>
 
                  </div>
 
-                <div class ="row mb-3 justify-content-center">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-danger " style={{color:'white', backgroundColor:'#41669d', borderColor:'#41669d'}} >
+                <div className ="row mb-3 justify-content-center">
+                    <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label className="btn btn-danger " style={{color:'white', backgroundColor:'#41669d', borderColor:'#41669d'}} >
                         <input type="radio" name="options" id="option2" autocomplete="off" value = {this.state.answers[1]}/> {this.state.answers[1]}
                       </label>
                     </div>
                 </div>
-                <div class ="row mb-3 justify-content-center">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-danger" style={{color:'white', backgroundColor:'#41669d', borderColor:'#41669d'}}  >
+                <div className ="row mb-3 justify-content-center">
+                    <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label className="btn btn-danger" style={{color:'white', backgroundColor:'#41669d', borderColor:'#41669d'}}  >
                         <input type="radio" name="options" id="option3" autocomplete="off" value = {this.state.answers[2]}/>{this.state.answers[2]}
                       </label>
                     </div>
                 </div>
-                 <div class ="row mb-3 justify-content-center">
+                 <div className ="row mb-3 justify-content-center">
                     <Button  size="lg" style={{ color:'white', backgroundColor:'#41669d'}} onClick={ this.onNextClick }>Next</Button>
                  </div>
 
