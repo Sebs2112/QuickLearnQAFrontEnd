@@ -4,7 +4,7 @@ import { Button, ButtonGroup} from 'reactstrap';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 
-import { Link, withRouter } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 class CardViewer extends Component {
@@ -17,9 +17,7 @@ class CardViewer extends Component {
 
     constructor(props) {
       super(props);
-      console.log(props);
       const {cookies} = props;
-      console.log(cookies);
       this.state = {cards: [], csrfToken: cookies.get('XSRF-TOKEN'), isLoading: true, filteredCards: []};
 
       this.handleDelete = this.handleDelete.bind(this);
@@ -36,7 +34,6 @@ class CardViewer extends Component {
   }
 
   async handleDelete(id){
-      console.log(id)
 
       await fetch(`/api/cards/${id}`, {
         method: 'DELETE',
@@ -59,16 +56,16 @@ class CardViewer extends Component {
     onDropDownClick (cat){
         let newCards = [...this.state.cards].filter(i => i.category === cat.e);
         this.setState({filteredCards:newCards});
-        console.log(cat)
+
     }
 
   render() {
     const {filteredCards, cards, isLoading} = this.state;
 
     const cats = cards.map(a => a.category);
-    console.log(cats);
+
     const distinctCats = [...new Set(cats)];
-    console.log(distinctCats);
+
 
     if (isLoading) {
       return <p>Loading...</p>;

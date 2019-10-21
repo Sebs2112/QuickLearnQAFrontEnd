@@ -21,12 +21,12 @@ class App extends Component {
         <Router>
 
           <Switch>
-            <Route exact path='/' exact={true} component={Home}/>
-            <Route exact path='/CardViewer' exact={true} component={CardViewer}/>
+            <Route exact path='/' component={Home}/>
+            <Route  path='/CardViewer' exact={true} component={CardViewer}/>
             <Route path='/AddCard' exact={true} component={AddCard}/>
             <Route path='/EditCard/:id' exact={true} component={EditCard}/>
-            <Route exact path='/LearnCards' exact={true} component={LearnCards}/>
-            <Route exact path='/TestCards' exact={true} component={TestCards}/>
+            <Route path='/LearnCards' exact={true} component={LearnCards}/>
+            <Route path='/TestCards' exact={true} component={TestCards}/>
 
 
 

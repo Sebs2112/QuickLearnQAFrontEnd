@@ -31,21 +31,21 @@ class NavB extends Component {
               handleChange(event) {
                 const target = event.target;
                 const value = target.value;
-            
+
                 let item = {...this.state.item};
                 item.sText= value;
                 this.setState({item});
-                console.log(this.state.item)
+
 
               }
 
     render(){
 
     const {item} = this.state;
-    console.log(item)
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark" style = {{backgroundColor: '#41669d'}}>
-              <a className="navbar-brand" style={{color:"white"}}>Card Flasher</a>
+              <a className="navbar-brand" href= "/" style={{color:"white"}}>Card Flasher</a>
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a className="nav-link" href="/">Home</a>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Row, Col} from 'reactstrap';
+import { Button} from 'reactstrap';
 
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 class CardViewer extends Component {
@@ -42,8 +41,6 @@ class CardViewer extends Component {
 
 
        onNextClick = () => {
-            console.log(this.state.currentCard)
-            console.log(this.state.filteredCards.length)
 
             if(this.state.currentCard === this.state.filteredCards.length -1){
                 this.checkAnswer();
@@ -62,7 +59,7 @@ class CardViewer extends Component {
             let answ = this.shuf(ans);
             this.setState({answers:answ,currentCard : t});
 
-            console.log(this.state.score)
+
             }
 
         }
@@ -72,18 +69,15 @@ class CardViewer extends Component {
             this.setState({display:'test', score:0});
             let newCards = this.shuf([...this.state.cards].filter(i => i.category === cat.e));
 
-            console.log(newCards);
+
 
             var i = Math.floor(Math.random() * newCards.length);
 
             var j = Math.floor(Math.random() * newCards.length);
-            console.log(i)
-            console.log(j)
-
 
             this.setState({filteredCards:newCards,currentCard: 0});
 
-            console.log(this.state.currentCard);
+
             let ans = [newCards[0].backText,newCards[i].backText,newCards[j].backText];
             let answ = this.shuf(ans);
             this.setState({answers:answ})
@@ -96,8 +90,6 @@ class CardViewer extends Component {
 
            if (document.getElementById("option1").checked){
 
-                console.log(document.getElementById("option1").value)
-                console.log(this.state.filteredCards[this.state.currentCard].backText)
 
 
                if(document.getElementById("option1").value === this.state.filteredCards[this.state.currentCard].backText){
@@ -107,13 +99,13 @@ class CardViewer extends Component {
 
            }
            if (document.getElementById("option2").checked){
-                    console.log(document.getElementById("option2").value)
+
                     if(document.getElementById("option2").value === this.state.filteredCards[this.state.currentCard].backText){
 
                          this.setState({score:this.state.score+1})};
                       }
            if (document.getElementById("option3").checked){
-                    console.log(document.getElementById("option3").value)
+
                     if(document.getElementById("option3").value === this.state.filteredCards[this.state.currentCard].backText){
 
                           this.setState({score:this.state.score+1})};
@@ -144,7 +136,7 @@ class CardViewer extends Component {
 
 
   render() {
-    const {cards, filteredCards, isLoading, answers, display,score} = this.state;
+    const {cards, isLoading, display,score} = this.state;
 
         const cats = cards.map(a => a.category);
 

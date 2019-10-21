@@ -41,16 +41,12 @@ class AddCard extends Component {
 
       handleChange(event) {
         const target = event.target;
-        console.log(event);
-        console.log(event.target);
-        console.log(event.target.value);
         const value = target.value;
         const name = target.name;
         let item = {...this.state.item};
         item[name] = value;
         this.setState({item});
-        console.log(this.state)
-        console.log(this.props);
+
       }
 
 

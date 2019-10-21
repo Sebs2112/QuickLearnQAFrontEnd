@@ -65,7 +65,7 @@ class EditCard extends Component {
            event.preventDefault();
            const {item} = this.state;
             const uri = `/api/cards/${this.props.match.params.id}`
-            console.log(uri)
+
 
 
            await fetch(uri, {

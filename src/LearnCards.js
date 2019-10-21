@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Button, CardBody, CardTitle, Container, Row, Col} from 'reactstrap';
+import { Button} from 'reactstrap';
 
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 class CardViewer extends Component {
@@ -21,7 +21,6 @@ class CardViewer extends Component {
 
     constructor(props) {
       super(props);
-      console.log(props);
       const {cookies} = props;
       this.state = {cards: [], csrfToken: cookies.get('XSRF-TOKEN'), isLoading: true, currentCard : 0,filteredCards: []};
 
@@ -78,7 +77,7 @@ class CardViewer extends Component {
 
 
         onNextClick = () => {
-            if (this.flippy.state.isFlipped == false){
+            if (this.flippy.state.isFlipped === false){
 
             this.setState({ currentCard: (this.state.currentCard + 1) % this.state.filteredCards.length });
             console.log(this.flippy)
@@ -87,9 +86,9 @@ class CardViewer extends Component {
         }
 
         onPrevClick= () => {
-            if (this.flippy.state.isFlipped == false){
+            if (this.flippy.state.isFlipped === false){
 
-            if( this.state.currentCard == 0){
+            if( this.state.currentCard === 0){
                  this.setState({ currentCard: this.state.filteredCards.length - 1 }); ;
             }else{
                 this.setState({ currentCard: this.state.currentCard -1  });
@@ -102,7 +101,7 @@ class CardViewer extends Component {
         }
 
   render() {
-    const {cards, filteredCards, isLoading} = this.state;
+    const {cards, isLoading} = this.state;
 
         const cats = cards.map(a => a.category);
         console.log(cats);

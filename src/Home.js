@@ -10,8 +10,7 @@ import ImportImage from './images/ImportImage.jpg';
 import Card from './Card';
 
 
-import { Link } from 'react-router-dom';
-import { Button, Container } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { withCookies } from 'react-cookie';
 
 
@@ -52,7 +51,6 @@ class Home extends Component {
   }
 
   logout() {
-    console.log("Called")
     fetch('/api/logout', {method: 'POST', credentials: 'include',
       headers: {'X-XSRF-TOKEN': this.state.csrfToken}}).then(res => res.json())
       .then(response => {
@@ -69,22 +67,20 @@ class Home extends Component {
     const button = this.state.isAuthenticated ?
       <div>
          <div className="container">
-                     <div className="row mt-3 mb-3">
-                       <div className="col-sm">
-                          <Card image = {ListImage} title = "List Cards" text = "View the cards that you have in your card library" r = "/CardViewer"/>
-                       </div>
-                       <div className="col-sm">
-                          <Card image = {LearnImage} title = "Learn Cards" text = "Memorise the cards that you have in your collections" r = "LearnCards"/>
-
-                       </div>
-                       <div className="col-sm">
-                          <Card image = {AddImage} title = "Add Cards" text = "Create new cards to add into your collections" r = "AddCard"/>
-
-                       </div>
-                     </div>
-                     <div className="row mt-3 mb-3">
+            <div className="row mt-3 mb-3">
+                <div className="col-sm">
+                    <Card image = {ListImage} title = "List Cards" text = "View the cards that you have in your card library" r = "/CardViewer"/>
+                </div>
+                <div className="col-sm">
+                    <Card image = {LearnImage} title = "Learn Cards" text = "Memorise the cards that you have in your collections" r = "LearnCards"/>
+                </div>
+                <div className="col-sm">
+                    <Card image = {AddImage} title = "Add Cards" text = "Create new cards to add into your collections" r = "AddCard"/>
+                </div>
+            </div>
+                <div className="row mt-3 mb-3">
                                    <div className="col-sm">
-                                   <Card image = {AddImage} title = "Logout" text  = "Log out of your account" r = "/" onClick = {this.logout}/>
+                                   <Card image = {LogOutImage} title = "Logout" text  = "Log out of your account" r = "/" onClick = {this.logout}/>
 
                                    </div>
                                    <div className="col-sm">
