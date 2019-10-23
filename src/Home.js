@@ -86,7 +86,7 @@ class Home extends Component {
                     <Card image = {TestImage} title = "Test" text  = "Test yourself on how well you know your collections " r = "/TestCards" />
                 </div>
                 <div className="col-sm">
-                    <Card image = {ImportImage} title = "Import" text  = "Import new card collections from a csv file " r = "/" />
+                    <Card image = {ImportImage} title = "Import" text  = "Import new card collections from a csv file " r = "/ImportCards" />
                 </div>
             </div>
         </div>

@@ -156,7 +156,7 @@ class CardViewer extends Component {
                              {this.state.filteredCards[this.state.currentCard].frontText}
                              </FrontSide>
                              <BackSide
-                             style={{ backgroundColor: '#175852', textAlign: 'center', color: 'white'}}>
+                             style={{ backgroundColor: '#175852', textAlign: 'center',  fontSize: "medium", color: 'white'}}>
                              {this.state.filteredCards[this.state.currentCard].backText}
                              </BackSide>
                          </Flippy>

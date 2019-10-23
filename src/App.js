@@ -8,6 +8,7 @@ import LearnCards from './LearnCards';
 import TestCards from './TestCards';
 import NavB from './NavB';
 import Home from './Home';
+import ImportCards from './ImportCards';
 import { CookiesProvider } from 'react-cookie';
 
 
@@ -27,6 +28,8 @@ class App extends Component {
             <Route path='/EditCard/:id' exact={true} component={EditCard}/>
             <Route path='/LearnCards' exact={true} component={LearnCards}/>
             <Route path='/TestCards' exact={true} component={TestCards}/>
+            <Route path='/ImportCards' exact={true} component={ImportCards}/>
+
 
 
 

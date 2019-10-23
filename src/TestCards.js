@@ -146,6 +146,8 @@ class CardViewer extends Component {
                               return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
                                })
 
+        // const theDropDown
+
 
 
     if (isLoading) {
@@ -155,13 +157,11 @@ class CardViewer extends Component {
     if(display === 'finish'){
     return(
          <div className = "App-header"  >
-
-
-                <h1 className="display-2 form">Test your Knowledge</h1>
+              <h1 className="display-2 form">Test your Knowledge</h1>
 
 
                                            <div className="dropdown">
-                                            <button className="btn btn-secondary dropdown-toggle buttons"   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button className="btn btn-secondary dropdown-toggle"style={{ backgroundColor:'#41669d' }}  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 Categories
                                               </button>
                                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -188,7 +188,7 @@ class CardViewer extends Component {
 
 
                                        <div className="dropdown">
-                                        <button className="btn btn-secondary dropdown-toggle buttons"   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d' }}   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Categories
                                           </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -208,7 +208,7 @@ class CardViewer extends Component {
       <div className = "App-header"  >
 
 
-            <h1 className="display-2" style={{color:'#41669d'}}>Test your Knowledge</h1>
+            <h1 className="display-2 form">Test your Knowledge</h1>
 
 
                                        <div className="dropdown">
@@ -216,9 +216,7 @@ class CardViewer extends Component {
                                             Categories
                                           </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                {distinctCats.map((e, key) => {
-                                                                      return <button className="dropdown-item" onClick={() =>  this.onDropDownClick({e})} >{e}</button>;
-                                                                       })}
+                                                {dropDMenu}
 
                                             </div>
 
