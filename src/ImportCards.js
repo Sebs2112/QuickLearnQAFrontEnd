@@ -62,13 +62,19 @@ class AddCard extends Component {
 
     return (
 
-      <div>
-      <p>Hi</p>
-      <form>
-      <input accept = ".csv" type = 'file' onChange={this.onChange}/><br/>
-      <Button onClick={() =>  this.onFileSubmit()}  >Submit</Button>
-      </form>
+
+      <div className="App-header">
+      <h1 className="display-2 form">Import Collection</h1>
+        <p className = "header">Please choose a csv file that you wish to upload into your collections</p>
+        <Form className="form" onSubmit={this.handleSubmit}>
+                <FormGroup>
+
+                  <input accept = ".csv" type = 'file' onChange={this.onChange}/><br/>
+                </FormGroup>
+                <Button className = "buttons" onClick={() =>  this.onFileSubmit()}  >Submit</Button>
+        </Form>
       </div>
+
     );
   }
 }

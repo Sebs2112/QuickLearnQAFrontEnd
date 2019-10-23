@@ -48,9 +48,6 @@ class NavB extends Component {
               <a className="navbar-brand" href= "/" style={{color:"white"}}>Card Flasher</a>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">Home</a>
-                </li>
-                <li className="nav-item">
                   <a className="nav-link" href="/CardViewer">View</a>
                 </li>
                 <li className="nav-item">
@@ -61,6 +58,9 @@ class NavB extends Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/TestCards">Test</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/ImportCards">Import</a>
                 </li>
               </ul>
               <form className="form-inline ml-auto" action="/action_page.php">

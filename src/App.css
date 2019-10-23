@@ -31,6 +31,12 @@
 
 }
 
+.header{
+    color:#41669d;
+
+
+}
+
 .buttons:hover {
   background-color: #175852; /* Green */
   color: white;
