@@ -39,7 +39,7 @@ class CardViewer extends Component {
   }
 
   async handleDelete(id){
-      console.log(id)
+
 
       await fetch(`/api/cards/${id}`, {
         method: 'DELETE',
@@ -58,7 +58,7 @@ class CardViewer extends Component {
         onDropDownClick (cat){
             let newCards = [...this.state.cards].filter(i => i.category === cat.e);
             this.setState({filteredCards:newCards,currentCard: 0});
-            console.log(cat)
+
 
         }
 
@@ -80,7 +80,7 @@ class CardViewer extends Component {
             if (this.flippy.state.isFlipped === false){
 
             this.setState({ currentCard: (this.state.currentCard + 1) % this.state.filteredCards.length });
-            console.log(this.flippy)
+
             }
 
         }
@@ -104,9 +104,9 @@ class CardViewer extends Component {
     const {cards, isLoading} = this.state;
 
         const cats = cards.map(a => a.category);
-        console.log(cats);
+
         const distinctCats = [...new Set(cats)];
-        console.log(distinctCats);
+        
 
 
     if (isLoading) {
@@ -152,7 +152,7 @@ class CardViewer extends Component {
                              // and other props, which will go to div
                            style={{ width: '300px', height: '200px' }} /// these are optional style, it is not necessary
                          >
-                             <FrontSide style={{ backgroundColor: '#41669d', textAlign: 'center', color: 'white'}}>
+                             <FrontSide style={{ backgroundColor: '#41669d', fontSize: "medium", textAlign: 'center', color: 'white'}}>
                              {this.state.filteredCards[this.state.currentCard].frontText}
                              </FrontSide>
                              <BackSide
