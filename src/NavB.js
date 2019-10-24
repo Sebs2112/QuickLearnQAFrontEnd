@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import { withRouter } from 'react-router-dom';
 
 
 import { withCookies, Cookies } from 'react-cookie';
@@ -12,36 +13,41 @@ class NavB extends Component {
               cookies: instanceOf(Cookies).isRequired
             };
 
-                  searchText = {
-                    sText: ''
-
-                  };
 
         constructor(props) {
           super(props);
           const {cookies} = props;
           this.state = {
-            item: this.searchText, csrfToken: cookies.get('XSRF-TOKEN')
+            searchText: "", csrfToken: cookies.get('XSRF-TOKEN')
           };
           this.handleChange = this.handleChange.bind(this);
 
-//          this.handleSubmit = this.handleSubmit.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
         }
 
               handleChange(event) {
-                const target = event.target;
-                const value = target.value;
 
-                let item = {...this.state.item};
-                item.sText= value;
-                this.setState({item});
+                this.setState({searchText:event.target.value});
+                console.log(this.state.searchText);
 
 
               }
 
+              handleSubmit(){
+                console.log(this.state.searchText);
+                const uri = `/api/cards/getByName/${this.state.searchText}`
+
+                fetch(uri, {credentials: 'include'})
+                  .then(response => response.json())
+                  .then((data) => this.props.history.push(`/EditCard/${data.id}`))
+                  .catch(() => this.props.history.push('/'));
+
+              }
+
+
     render(){
 
-    const {item} = this.state;
+    const {searchText} = this.state;
 
     return (
         <nav className="navbar navbar-expand-sm navbar-dark" style = {{backgroundColor: '#41669d'}}>
@@ -63,10 +69,10 @@ class NavB extends Component {
                   <a className="nav-link" href="/ImportCards">Import</a>
                 </li>
               </ul>
-              <form className="form-inline ml-auto" action="/action_page.php">
-                <input className="form-control mr-sm-2" type="text" placeholder="Search" value={item.sText} onChange={this.handleChange}></input>
-                <button className="btn btn-success" type="submit" onSubmit={this.handleSubmit}>Search</button>
-              </form>
+              <span className="form-inline ml-auto">
+                <input className="form-control mr-sm-2" type="text" placeholder="Search" value={searchText} onChange={this.handleChange}></input>
+                <button className="btn btn-success" onClick={this.handleSubmit}>Search</button>
+              </span>
         </nav>
 
     );
@@ -74,4 +80,4 @@ class NavB extends Component {
   }
 
 
-export default withCookies(NavB);
+export default withCookies(withRouter(NavB));

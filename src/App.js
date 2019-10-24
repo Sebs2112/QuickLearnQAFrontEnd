@@ -18,9 +18,9 @@ class App extends Component {
         <div>
 
         <CookiesProvider>
-        <NavB></NavB>
-        <Router>
 
+        <Router>
+          <NavB></NavB>
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route  path='/CardViewer' exact={true} component={CardViewer}/>
