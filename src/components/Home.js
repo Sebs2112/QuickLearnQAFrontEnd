@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import './Home.css';
-import ListImage from './images/ListImage.jpg';
-import LearnImage from './images/LearnImage.jpg';
-import AddImage from './images/AddImage.jpg';
-import LogOutImage from './images/LogOutImage.jpg';
-import TestImage from './images/TestImage.jpg';
-import ImportImage from './images/ImportImage.jpg';
+import '../css/App.css';
+import '../css/Home.css';
+import ListImage from '../images/ListImage.jpg';
+import LearnImage from '../images/LearnImage.jpg';
+import AddImage from '../images/AddImage.jpg';
+import LogOutImage from '../images/LogOutImage.jpg';
+import TestImage from '../images/TestImage.jpg';
+import ImportImage from '../images/ImportImage.jpg';
 import Card from './Card';
 
 
@@ -27,6 +27,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     const {cookies} = props;
+
     this.state.csrfToken = cookies.get('XSRF-TOKEN');
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -51,6 +52,7 @@ class Home extends Component {
   }
 
   logout() {
+    console.log("Hi")
     fetch('/api/logout', {method: 'POST', credentials: 'include',
       headers: {'X-XSRF-TOKEN': this.state.csrfToken}}).then(res => res.json())
       .then(response => {
