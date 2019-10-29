@@ -20,7 +20,7 @@ class AddCard extends Component {
         title: ''
       };
 
-        constructor(props) {
+      constructor(props) {
           super(props);
           const {cookies} = props;
           this.state = {
@@ -38,8 +38,6 @@ class AddCard extends Component {
 
       }
 
-
-
       handleChange(event) {
         const target = event.target;
         const value = target.value;
@@ -49,7 +47,6 @@ class AddCard extends Component {
         this.setState({item});
 
       }
-
 
       async handleSubmit(event) {
            event.preventDefault();
@@ -69,9 +66,6 @@ class AddCard extends Component {
             this.props.history.push("/")
          }
 
-
-
-
     render(){
 
         if (this.state.isLoading) {
@@ -80,15 +74,13 @@ class AddCard extends Component {
 
     const {item} = this.state;
     return (
-
-
       <div className="App-header">
       <h1 className="display-2 form">Add Card</h1>
       <Form className="form" onSubmit={this.handleSubmit}>
                 <FormGroup>
                   <Label for="frontText">Front Text</Label>
                   <Input type="text" name="frontText" id="frontText" value={item.frontText}
-                         onChange={this.handleChange}/>
+                  onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
                   <Label for="backText">Back Text</Label>
@@ -107,13 +99,9 @@ class AddCard extends Component {
                 </FormGroup>
                 <FormGroup>
                 <Button className = "buttons" type="submit">Add</Button>
-
                 </FormGroup>
         </Form>
       </div>
-
-    );
-  }
+    );}
 }
-
 export default withCookies(withRouter(AddCard));

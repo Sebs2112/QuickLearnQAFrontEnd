@@ -92,7 +92,7 @@ class CardViewer extends Component {
                   Categories
               </button>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {dropDownButtons}
+                  {dropDownButtons}cd
               </div>
           </div>
           <table className="table table-borderless" >

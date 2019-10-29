@@ -13,10 +13,6 @@ import Card from './Card';
 import { Button } from 'reactstrap';
 import { withCookies } from 'react-cookie';
 
-
-
-
-
 class Home extends Component {
   state = {
     isLoading: true,
