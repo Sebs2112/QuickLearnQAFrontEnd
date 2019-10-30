@@ -84,17 +84,22 @@ class CardViewer extends Component {
                                                    })
 
     return (
-      <div className = "App-header" >
+      <div className = "App-header " >
         <div>
-          <h1 className="display-2 form" >Current Cards</h1>
+          <div className = "row justify-content-md-center ">
+          <h1 className="display-2 form " >Current Cards</h1>
+          </div>
+          <div className = "row justify-content-md-center ">
           <div className="dropdown ">
               <button className="btn btn-secondary dropdown-toggle" style={{ backgroundColor:'#41669d' }} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Categories
               </button>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {dropDownButtons}cd
+                  {dropDownButtons}
               </div>
           </div>
+          </div>
+          <div className = "row justify-content-md-center ">
           <table className="table table-borderless" >
               <thead>
                   <tr>
@@ -104,6 +109,7 @@ class CardViewer extends Component {
                 {cardTable}
               </tbody>
           </table>
+          </div>
         </div>
       </div>
 
